@@ -28,7 +28,7 @@ function getNewEmail()
 
     foreach ($emails as $mail) {
 
-        //imap_setflag_full($inbox, $mail, '\\seen');
+        imap_setflag_full($inbox, $mail, '\\seen');
 
         $headerInfo = imap_headerinfo($inbox, $mail);
         $answer = getDomainThems($headerInfo->subject);
